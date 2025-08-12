@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+
+public class WordCount {
+    public static void main(String[] args) {
+        try {
+            File inputFile = new File("input.txt");
+            Scanner sc = new Scanner(inputFile);
+            int wordCount = 0;
+
+            while (sc.hasNext()) {
+                sc.next();
+                wordCount++;
+            }
+            sc.close();
+
+            FileWriter writer = new FileWriter("output.txt");
+            writer.write("Word Count: " + wordCount);
+            writer.close();
+
+            System.out.println("Word count written to output.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
