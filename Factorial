@@ -1,0 +1,16 @@
+public class Factorial {
+    static int factorialRec(int n) {
+        return (n == 0) ? 1 : n * factorialRec(n - 1);
+    }
+
+    static int factorialIter(int n) {
+        int fact = 1;
+        for (int i = 1; i <= n; i++) fact *= i;
+        return fact;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Recursion: " + factorialRec(5));
+        System.out.println("Iteration: " + factorialIter(5));
+    }
+}
